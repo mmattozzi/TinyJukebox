@@ -65,8 +65,7 @@
 		AF3BA42013B7DBD800D32708 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF3BA41F13B7DBD700D32708 /* Preferences.xib */; };
 		AF3BA42313B7DC2B00D32708 /* JukeboxPrefWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA42213B7DC2B00D32708 /* JukeboxPrefWindow.m */; };
 		AFCE78CB1416F63C00E22468 /* tinyjukebox.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCE78CA1416F63C00E22468 /* tinyjukebox.png */; };
-		AFCE78CD1417028C00E22468 /* jukebox.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCE78CC1417028C00E22468 /* jukebox.png */; };
-		AFCE78CF141702A600E22468 /* jukebox.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCE78CE141702A500E22468 /* jukebox.png */; };
+		AFCE790D14170F1700E22468 /* jukebox.icns in Resources */ = {isa = PBXBuildFile; fileRef = AFCE790C14170F1700E22468 /* jukebox.icns */; };
 		AFD1E28E13C5598D000AFFFF /* HttpAudioScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD1E28D13C5598D000AFFFF /* HttpAudioScanner.m */; };
 /* End PBXBuildFile section */
 
@@ -184,8 +183,7 @@
 		AF3BA42113B7DC2A00D32708 /* JukeboxPrefWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxPrefWindow.h; sourceTree = "<group>"; };
 		AF3BA42213B7DC2B00D32708 /* JukeboxPrefWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxPrefWindow.m; sourceTree = "<group>"; };
 		AFCE78CA1416F63C00E22468 /* tinyjukebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tinyjukebox.png; sourceTree = "<group>"; };
-		AFCE78CC1417028C00E22468 /* jukebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jukebox.png; sourceTree = "<group>"; };
-		AFCE78CE141702A500E22468 /* jukebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jukebox.png; sourceTree = "<group>"; };
+		AFCE790C14170F1700E22468 /* jukebox.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = jukebox.icns; sourceTree = "<group>"; };
 		AFD1E28C13C5598D000AFFFF /* HttpAudioScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpAudioScanner.h; sourceTree = "<group>"; };
 		AFD1E28D13C5598D000AFFFF /* HttpAudioScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpAudioScanner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,7 +206,7 @@
 		AF3BA2A413A6F64500D32708 = {
 			isa = PBXGroup;
 			children = (
-				AFCE78CE141702A500E22468 /* jukebox.png */,
+				AFCE790C14170F1700E22468 /* jukebox.icns */,
 				AF3BA41B13B7DB8800D32708 /* DBPrefsWindowController */,
 				AF3BA41713B7DB7E00D32708 /* URLParser */,
 				AF3BA3BA13B2D5F900D32708 /* Fmdb */,
@@ -287,7 +285,6 @@
 		AF3BA2BA13A6F64500D32708 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AFCE78CC1417028C00E22468 /* jukebox.png */,
 				AFCE78CA1416F63C00E22468 /* tinyjukebox.png */,
 				AF3BA2BB13A6F64500D32708 /* TinyJukebox-Info.plist */,
 				AF3BA2BC13A6F64500D32708 /* InfoPlist.strings */,
@@ -482,8 +479,7 @@
 				AF3BA3B713A868DC00D32708 /* THIRDPARTY-LICENSES.txt in Resources */,
 				AF3BA42013B7DBD800D32708 /* Preferences.xib in Resources */,
 				AFCE78CB1416F63C00E22468 /* tinyjukebox.png in Resources */,
-				AFCE78CD1417028C00E22468 /* jukebox.png in Resources */,
-				AFCE78CF141702A600E22468 /* jukebox.png in Resources */,
+				AFCE790D14170F1700E22468 /* jukebox.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
