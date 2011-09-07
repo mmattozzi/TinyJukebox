@@ -1,0 +1,215 @@
+<html>
+
+	<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Tiny Jukebox on %%COMPUTER_NAME%%</title>
+		<link type="text/css" href="css/cupertino/jquery-ui-1.8.13.custom.css" rel="stylesheet" />
+		<style type="text/css">
+			ul { list-style-type: none; margin: 0px; padding: 0px; 
+				font-family: 'Verdana'; font-size: 12px; }
+			.padded { padding: 6px; }
+			.plusButton { height: 12px, width: 12px; padding: 0px }
+			li:hover { background: rgb(240,240,240); cursor: pointer; }
+			.oddSong { background: #d7ebf9; }
+			.evenSong { background: white }
+			.col { width: 20%;  border-right: 1px solid gray;  }
+			.colRight { width: 20%; border: none; }
+			.container { height: 500px; max-height: 500px; overflow-y: auto; }
+			button { font-family: 'Verdana'; font-size: 12px; }
+			#alerts { font-family: 'Verdana'; font-size: 14px; color: red; }
+			#reconnect { display:none; }
+			th { font-family: 'Verdana'; font-size: 14px; color: #2779aa; }
+		</style>
+		
+		<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.13.custom.min.js"></script>
+        
+		<script type="text/javascript">
+            
+            var currentServer = null;
+            var currentArtist = null;
+            var currentAlbum = null;
+            var playlistHash = "NOTHING";
+            
+            $(document).ready(function() {
+            
+            	$("button").button();
+            	$("#refresh").click(function() {
+            		refresh();
+            	});
+            	$("#next").click(function() {
+            		$.get("/api/stop");
+            	});
+            	$("#pause").click(function() {
+            		$.get("api/pause");
+            	});
+            	$("#reconnect").click(function() {
+            		startPlaylistUpdateListener();
+            	});
+            	refresh();
+            	startPlaylistUpdateListener();
+            });
+            
+            function startPlaylistUpdateListener() {
+            	if ("WebSocket" in window) {
+					var ws = new WebSocket("ws://" + window.location.host + "/updater");
+					ws.onopen = function() {
+						console.log("websocket is open");
+						$("#reconnect").fadeOut();
+						$("#alerts").html("");
+					};
+					ws.onmessage = function(evt) {
+						if (evt.data === "Playlist updated") {
+							loadPlaylist();
+						} else if (evt.data === "Paused") {
+							$("#pause").button("option", "label", "Play");
+						} else if (evt.data === "Playing") {
+							$("#pause").button("option", "label", "Pause");
+						}
+						console.log("received: " + evt.data); 
+					};
+					ws.onclose = function() { 
+						console.log("websocket is closed");
+						$("#alerts").html("Disconnected from server. Press reconnect to attempt to regain connection.");
+						$("#reconnect").fadeIn();
+					};
+				}
+				else {
+					// Default to polling for playlist updates
+					setInterval(loadPlaylist, 2000);
+					$("#alerts").html("Your browser doesn't support Websockets. Consider using Google Chrome or Safari.");
+				}
+            }
+            
+            function refresh() {
+            	$("#artists").empty();
+            	$("#albums").empty();
+            	$("#tracks").empty();
+            	$("#servers").empty();
+            	$.get("/api/servers", function(data) {
+            		displayRowData(data, "#servers");
+            	}, "json");
+            	loadPlaylist();
+            }
+            
+            function displayRowData(data, dst) {
+            	rowNum = 0;
+            	var ul = $("<ul></ul>");
+            	$(dst).append(ul);
+            	if (dst === "#playlist") {
+            		if (data.playing && data.playing.title !== "TINYJUKEBOX_NOTHING") {
+            			var song = $("<li class='playing'>" + data.playing.artist + " - " + data.playing.title + "</li>");
+						ul.append(song);
+						data = data.queue;
+					}
+            	}
+            	
+            	if (dst === "#tracks" && data.length > 0 && data[0].album !== null) {
+            		var cssClass = (rowNum % 2 == 0 ? "evenSong" : "oddSong");
+            		var all = $("<li class='" + cssClass + "'> *** Queue All *** </li>");
+            		all.click(function() {
+            			$.get("/api/addAlbumToQueue?server=" + data[0].server + "&artist=" + data[0].artist + "&album=" + data[0].album);
+            		});
+            		ul.append(all);
+            		rowNum++;
+            	}
+            	
+            	if (data.length > 0) {
+					data.forEach(function(row) {
+						var cssClass = (rowNum % 2 == 0 ? "evenSong" : "oddSong");
+						if (dst === "#tracks") {
+							var song = $("<li class='" + cssClass + "'>" + row.artist + " - " + row.title + "</li>");
+							ul.append(song);
+							song.click(function() {
+								$.get("/api/addToQueue/" + row.id);
+							});
+						} else if (dst === "#playlist") {
+							var song = $("<li class='" + cssClass + "'>" + row.artist + " - " + row.title + "</li>");
+							ul.append(song);
+						} else {
+							var item = $("<li class='" + cssClass + "'>" + row + "</li>");
+							ul.append(item);
+							if (dst === "#servers") {
+								item.click(function() {
+									currentServer = row;
+									loadArtists();
+								});
+							} else if (dst === "#artists") {
+								item.click(function() {
+									currentArtist = row;
+									loadAlbums();
+								});
+							} else if (dst === "#albums") {
+								item.click(function() {
+									currentAlbum = row;
+									loadTracks();
+								});
+							}
+						}
+						rowNum++;
+					});
+				}
+            }
+            
+            function loadArtists() {
+            	$("#artists").empty();
+            	$("#albums").empty();
+            	$("#tracks").empty();
+            	$.get("/api/artists?server=" + currentServer, function(data) {
+            		displayRowData(data, "#artists");
+            	}, "json");
+            }
+            
+            function loadAlbums() {
+            	$("#albums").empty();
+            	$("#tracks").empty();
+            	$.get("/api/albums?server=" + currentServer + "&artist=" + currentArtist, function(data) {
+            		displayRowData(data, "#albums");
+            	}, "json");
+            }
+            
+            function loadTracks() {
+            	$("#tracks").empty();
+            	$.get("/api/playable?server=" + currentServer + "&artist=" + currentArtist + "&album=" + currentAlbum, function(data) {
+            		displayRowData(data, "#tracks");
+            	}, "json");
+            }
+            
+            function loadPlaylist() {
+            	$.get("/api/playlist", function(data) {
+            		if (data.hash != playlistHash) {
+            			playlistHash = data.hash;
+            			$("#playlist").empty();
+            			displayRowData(data, "#playlist");
+            		} 
+            	}, "json");
+            }
+            
+        </script>
+        
+	</head>
+	<body>
+		<table style="width: 100%;">
+			<tr>
+				<th>Playlist</th>
+				<th>Servers</th>
+				<th>Artists</th>
+				<th>Albums</th>
+				<th>Tracks</th>
+			</tr>
+			<tr>
+				<td valign='top' class='col'><div id="playlist" class='container'></div></td>
+				<td valign='top' class='col'><div id="servers" class='container'></div></td>
+				<td valign='top' class='col'><div id="artists" class='container'></div></td>
+				<td valign='top' class='col'><div id="albums" class='container'></div></td>
+				<td valign='top' class='colRight'><div id="tracks" class='container'></div></td>
+			</tr>
+		</table>
+		<button id="next">Next</button>
+		<button id="pause">Pause</button>
+		<button id="refresh">Refresh</button>
+		<button id="reconnect">Reconnect</button>
+		<div id="alerts"></div>
+	</body>
+
+</html>

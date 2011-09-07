@@ -1,0 +1,665 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF3BA2B413A6F64500D32708 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3BA2B313A6F64500D32708 /* Cocoa.framework */; };
+		AF3BA2BE13A6F64500D32708 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF3BA2BC13A6F64500D32708 /* InfoPlist.strings */; };
+		AF3BA2C113A6F64500D32708 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA2C013A6F64500D32708 /* main.m */; };
+		AF3BA2C413A6F64500D32708 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AF3BA2C213A6F64500D32708 /* Credits.rtf */; };
+		AF3BA2C713A6F64500D32708 /* TinyJukeboxAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA2C613A6F64500D32708 /* TinyJukeboxAppDelegate.m */; };
+		AF3BA2CA13A6F64500D32708 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF3BA2C813A6F64500D32708 /* MainMenu.xib */; };
+		AF3BA2D113A6F65400D32708 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3BA2D013A6F65400D32708 /* AudioToolbox.framework */; };
+		AF3BA2D313A6F69900D32708 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3BA2D213A6F69900D32708 /* Security.framework */; };
+		AF3BA31813A6F86100D32708 /* AudioTag.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA31313A6F86100D32708 /* AudioTag.m */; };
+		AF3BA31913A6F86100D32708 /* JukeboxConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA31513A6F86100D32708 /* JukeboxConfig.m */; };
+		AF3BA31A13A6F86100D32708 /* JukeboxHttpConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA31713A6F86100D32708 /* JukeboxHttpConnection.m */; };
+		AF3BA31C13A6F9AA00D32708 /* Web in Resources */ = {isa = PBXBuildFile; fileRef = AF3BA31B13A6F9AA00D32708 /* Web */; };
+		AF3BA36913A85FF800D32708 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA35113A85FF800D32708 /* NSObject+SBJson.m */; };
+		AF3BA36A13A85FF800D32708 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA35413A85FF800D32708 /* SBJsonParser.m */; };
+		AF3BA36B13A85FF800D32708 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA35613A85FF800D32708 /* SBJsonStreamParser.m */; };
+		AF3BA36C13A85FF800D32708 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA35813A85FF800D32708 /* SBJsonStreamParserAccumulator.m */; };
+		AF3BA36D13A85FF800D32708 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA35A13A85FF800D32708 /* SBJsonStreamParserAdapter.m */; };
+		AF3BA36E13A85FF800D32708 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA35C13A85FF800D32708 /* SBJsonStreamParserState.m */; };
+		AF3BA36F13A85FF800D32708 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA35E13A85FF800D32708 /* SBJsonStreamWriter.m */; };
+		AF3BA37013A85FF800D32708 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA36013A85FF800D32708 /* SBJsonStreamWriterAccumulator.m */; };
+		AF3BA37113A85FF800D32708 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA36213A85FF800D32708 /* SBJsonStreamWriterState.m */; };
+		AF3BA37213A85FF800D32708 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA36413A85FF800D32708 /* SBJsonTokeniser.m */; };
+		AF3BA37313A85FF800D32708 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA36613A85FF800D32708 /* SBJsonUTF8Stream.m */; };
+		AF3BA37413A85FF800D32708 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA36813A85FF800D32708 /* SBJsonWriter.m */; };
+		AF3BA39C13A860A200D32708 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA37713A860A200D32708 /* DDASLLogger.m */; };
+		AF3BA39D13A860A200D32708 /* DDData.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA37913A860A200D32708 /* DDData.m */; };
+		AF3BA39E13A860A200D32708 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA37B13A860A200D32708 /* DDFileLogger.m */; };
+		AF3BA39F13A860A200D32708 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA37D13A860A200D32708 /* DDLog.m */; };
+		AF3BA3A013A860A200D32708 /* DDNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA37F13A860A200D32708 /* DDNumber.m */; };
+		AF3BA3A113A860A200D32708 /* DDRange.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA38113A860A200D32708 /* DDRange.m */; };
+		AF3BA3A213A860A200D32708 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA38313A860A200D32708 /* DDTTYLogger.m */; };
+		AF3BA3A313A860A200D32708 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA38513A860A200D32708 /* GCDAsyncSocket.m */; };
+		AF3BA3A413A860A200D32708 /* HTTPAsyncFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA38713A860A200D32708 /* HTTPAsyncFileResponse.m */; };
+		AF3BA3A513A860A200D32708 /* HTTPAuthenticationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA38913A860A200D32708 /* HTTPAuthenticationRequest.m */; };
+		AF3BA3A613A860A200D32708 /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA38B13A860A200D32708 /* HTTPConnection.m */; };
+		AF3BA3A713A860A200D32708 /* HTTPDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA38D13A860A200D32708 /* HTTPDataResponse.m */; };
+		AF3BA3A813A860A200D32708 /* HTTPDynamicFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA38F13A860A200D32708 /* HTTPDynamicFileResponse.m */; };
+		AF3BA3A913A860A200D32708 /* HTTPFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA39113A860A200D32708 /* HTTPFileResponse.m */; };
+		AF3BA3AA13A860A200D32708 /* HTTPMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA39413A860A200D32708 /* HTTPMessage.m */; };
+		AF3BA3AB13A860A200D32708 /* HTTPRedirectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA39613A860A200D32708 /* HTTPRedirectResponse.m */; };
+		AF3BA3AC13A860A200D32708 /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA39913A860A200D32708 /* HTTPServer.m */; };
+		AF3BA3AD13A860A200D32708 /* WebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA39B13A860A200D32708 /* WebSocket.m */; };
+		AF3BA3B113A865F000D32708 /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA3B013A865F000D32708 /* AudioStreamer.m */; };
+		AF3BA3B513A8667B00D32708 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF3BA3B313A8667B00D32708 /* LICENSE.txt */; };
+		AF3BA3B713A868DC00D32708 /* THIRDPARTY-LICENSES.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF3BA3B613A868DC00D32708 /* THIRDPARTY-LICENSES.txt */; };
+		AF3BA3C213B2D5F900D32708 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA3BC13B2D5F900D32708 /* FMDatabase.m */; };
+		AF3BA3C313B2D5F900D32708 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA3BE13B2D5F900D32708 /* FMDatabaseAdditions.m */; };
+		AF3BA3C513B2D5F900D32708 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA3C113B2D5F900D32708 /* FMResultSet.m */; };
+		AF3BA3C813B2D90A00D32708 /* JukeboxData.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA3C713B2D90A00D32708 /* JukeboxData.m */; };
+		AF3BA3D213B2E4CF00D32708 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3BA3D113B2E4CF00D32708 /* libsqlite3.dylib */; };
+		AF3BA3D513B4306800D32708 /* FSAudioScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA3D413B4306800D32708 /* FSAudioScanner.m */; };
+		AF3BA3DC13B68A3A00D32708 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA3DB13B68A3900D32708 /* Util.m */; };
+		AF3BA3E713B7B73300D32708 /* JukeboxWebsocket.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA3E613B7B73300D32708 /* JukeboxWebsocket.m */; };
+		AF3BA41A13B7DB7F00D32708 /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA41913B7DB7F00D32708 /* URLParser.m */; };
+		AF3BA41E13B7DB8800D32708 /* DBPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA41D13B7DB8800D32708 /* DBPrefsWindowController.m */; };
+		AF3BA42013B7DBD800D32708 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF3BA41F13B7DBD700D32708 /* Preferences.xib */; };
+		AF3BA42313B7DC2B00D32708 /* JukeboxPrefWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA42213B7DC2B00D32708 /* JukeboxPrefWindow.m */; };
+		AFCE78CB1416F63C00E22468 /* tinyjukebox.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCE78CA1416F63C00E22468 /* tinyjukebox.png */; };
+		AFCE78CD1417028C00E22468 /* jukebox.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCE78CC1417028C00E22468 /* jukebox.png */; };
+		AFCE78CF141702A600E22468 /* jukebox.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCE78CE141702A500E22468 /* jukebox.png */; };
+		AFD1E28E13C5598D000AFFFF /* HttpAudioScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD1E28D13C5598D000AFFFF /* HttpAudioScanner.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AF3BA2AF13A6F64500D32708 /* TinyJukebox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyJukebox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF3BA2B313A6F64500D32708 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AF3BA2B613A6F64500D32708 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		AF3BA2B713A6F64500D32708 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AF3BA2B813A6F64500D32708 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AF3BA2BB13A6F64500D32708 /* TinyJukebox-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TinyJukebox-Info.plist"; sourceTree = "<group>"; };
+		AF3BA2BD13A6F64500D32708 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AF3BA2BF13A6F64500D32708 /* TinyJukebox-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinyJukebox-Prefix.pch"; sourceTree = "<group>"; };
+		AF3BA2C013A6F64500D32708 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AF3BA2C313A6F64500D32708 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		AF3BA2C513A6F64500D32708 /* TinyJukeboxAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TinyJukeboxAppDelegate.h; sourceTree = "<group>"; };
+		AF3BA2C613A6F64500D32708 /* TinyJukeboxAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TinyJukeboxAppDelegate.m; sourceTree = "<group>"; };
+		AF3BA2C913A6F64500D32708 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		AF3BA2D013A6F65400D32708 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		AF3BA2D213A6F69900D32708 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		AF3BA31213A6F86100D32708 /* AudioTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioTag.h; sourceTree = "<group>"; };
+		AF3BA31313A6F86100D32708 /* AudioTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioTag.m; sourceTree = "<group>"; };
+		AF3BA31413A6F86100D32708 /* JukeboxConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxConfig.h; sourceTree = "<group>"; };
+		AF3BA31513A6F86100D32708 /* JukeboxConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxConfig.m; sourceTree = "<group>"; };
+		AF3BA31613A6F86100D32708 /* JukeboxHttpConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxHttpConnection.h; sourceTree = "<group>"; };
+		AF3BA31713A6F86100D32708 /* JukeboxHttpConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxHttpConnection.m; sourceTree = "<group>"; };
+		AF3BA31B13A6F9AA00D32708 /* Web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Web; sourceTree = "<group>"; };
+		AF3BA34F13A85FF800D32708 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		AF3BA35013A85FF800D32708 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
+		AF3BA35113A85FF800D32708 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		AF3BA35213A85FF800D32708 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		AF3BA35313A85FF800D32708 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		AF3BA35413A85FF800D32708 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		AF3BA35513A85FF800D32708 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		AF3BA35613A85FF800D32708 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		AF3BA35713A85FF800D32708 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		AF3BA35813A85FF800D32708 /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		AF3BA35913A85FF800D32708 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		AF3BA35A13A85FF800D32708 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		AF3BA35B13A85FF800D32708 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		AF3BA35C13A85FF800D32708 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		AF3BA35D13A85FF800D32708 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		AF3BA35E13A85FF800D32708 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		AF3BA35F13A85FF800D32708 /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		AF3BA36013A85FF800D32708 /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		AF3BA36113A85FF800D32708 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		AF3BA36213A85FF800D32708 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		AF3BA36313A85FF800D32708 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		AF3BA36413A85FF800D32708 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		AF3BA36513A85FF800D32708 /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		AF3BA36613A85FF800D32708 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		AF3BA36713A85FF800D32708 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		AF3BA36813A85FF800D32708 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		AF3BA37613A860A200D32708 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		AF3BA37713A860A200D32708 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		AF3BA37813A860A200D32708 /* DDData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDData.h; sourceTree = "<group>"; };
+		AF3BA37913A860A200D32708 /* DDData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDData.m; sourceTree = "<group>"; };
+		AF3BA37A13A860A200D32708 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		AF3BA37B13A860A200D32708 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		AF3BA37C13A860A200D32708 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		AF3BA37D13A860A200D32708 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		AF3BA37E13A860A200D32708 /* DDNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDNumber.h; sourceTree = "<group>"; };
+		AF3BA37F13A860A200D32708 /* DDNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDNumber.m; sourceTree = "<group>"; };
+		AF3BA38013A860A200D32708 /* DDRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDRange.h; sourceTree = "<group>"; };
+		AF3BA38113A860A200D32708 /* DDRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDRange.m; sourceTree = "<group>"; };
+		AF3BA38213A860A200D32708 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		AF3BA38313A860A200D32708 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		AF3BA38413A860A200D32708 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		AF3BA38513A860A200D32708 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		AF3BA38613A860A200D32708 /* HTTPAsyncFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPAsyncFileResponse.h; sourceTree = "<group>"; };
+		AF3BA38713A860A200D32708 /* HTTPAsyncFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPAsyncFileResponse.m; sourceTree = "<group>"; };
+		AF3BA38813A860A200D32708 /* HTTPAuthenticationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPAuthenticationRequest.h; sourceTree = "<group>"; };
+		AF3BA38913A860A200D32708 /* HTTPAuthenticationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPAuthenticationRequest.m; sourceTree = "<group>"; };
+		AF3BA38A13A860A200D32708 /* HTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConnection.h; sourceTree = "<group>"; };
+		AF3BA38B13A860A200D32708 /* HTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPConnection.m; sourceTree = "<group>"; };
+		AF3BA38C13A860A200D32708 /* HTTPDataResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDataResponse.h; sourceTree = "<group>"; };
+		AF3BA38D13A860A200D32708 /* HTTPDataResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDataResponse.m; sourceTree = "<group>"; };
+		AF3BA38E13A860A200D32708 /* HTTPDynamicFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDynamicFileResponse.h; sourceTree = "<group>"; };
+		AF3BA38F13A860A200D32708 /* HTTPDynamicFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDynamicFileResponse.m; sourceTree = "<group>"; };
+		AF3BA39013A860A200D32708 /* HTTPFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPFileResponse.h; sourceTree = "<group>"; };
+		AF3BA39113A860A200D32708 /* HTTPFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPFileResponse.m; sourceTree = "<group>"; };
+		AF3BA39213A860A200D32708 /* HTTPLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPLogging.h; sourceTree = "<group>"; };
+		AF3BA39313A860A200D32708 /* HTTPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPMessage.h; sourceTree = "<group>"; };
+		AF3BA39413A860A200D32708 /* HTTPMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPMessage.m; sourceTree = "<group>"; };
+		AF3BA39513A860A200D32708 /* HTTPRedirectResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRedirectResponse.h; sourceTree = "<group>"; };
+		AF3BA39613A860A200D32708 /* HTTPRedirectResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRedirectResponse.m; sourceTree = "<group>"; };
+		AF3BA39713A860A200D32708 /* HTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPResponse.h; sourceTree = "<group>"; };
+		AF3BA39813A860A200D32708 /* HTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPServer.h; sourceTree = "<group>"; };
+		AF3BA39913A860A200D32708 /* HTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPServer.m; sourceTree = "<group>"; };
+		AF3BA39A13A860A200D32708 /* WebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocket.h; sourceTree = "<group>"; };
+		AF3BA39B13A860A200D32708 /* WebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocket.m; sourceTree = "<group>"; };
+		AF3BA3AF13A865F000D32708 /* AudioStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioStreamer.h; sourceTree = "<group>"; };
+		AF3BA3B013A865F000D32708 /* AudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioStreamer.m; sourceTree = "<group>"; };
+		AF3BA3B313A8667B00D32708 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		AF3BA3B613A868DC00D32708 /* THIRDPARTY-LICENSES.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "THIRDPARTY-LICENSES.txt"; sourceTree = "<group>"; };
+		AF3BA3BB13B2D5F900D32708 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		AF3BA3BC13B2D5F900D32708 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		AF3BA3BD13B2D5F900D32708 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		AF3BA3BE13B2D5F900D32708 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		AF3BA3C013B2D5F900D32708 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		AF3BA3C113B2D5F900D32708 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		AF3BA3C613B2D90A00D32708 /* JukeboxData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxData.h; sourceTree = "<group>"; };
+		AF3BA3C713B2D90A00D32708 /* JukeboxData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxData.m; sourceTree = "<group>"; };
+		AF3BA3D113B2E4CF00D32708 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		AF3BA3D313B4306800D32708 /* FSAudioScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSAudioScanner.h; sourceTree = "<group>"; };
+		AF3BA3D413B4306800D32708 /* FSAudioScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSAudioScanner.m; sourceTree = "<group>"; };
+		AF3BA3DA13B68A3900D32708 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		AF3BA3DB13B68A3900D32708 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		AF3BA3E513B7B73200D32708 /* JukeboxWebsocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxWebsocket.h; sourceTree = "<group>"; };
+		AF3BA3E613B7B73300D32708 /* JukeboxWebsocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxWebsocket.m; sourceTree = "<group>"; };
+		AF3BA41813B7DB7F00D32708 /* URLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLParser.h; sourceTree = "<group>"; };
+		AF3BA41913B7DB7F00D32708 /* URLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLParser.m; sourceTree = "<group>"; };
+		AF3BA41C13B7DB8800D32708 /* DBPrefsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPrefsWindowController.h; sourceTree = "<group>"; };
+		AF3BA41D13B7DB8800D32708 /* DBPrefsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPrefsWindowController.m; sourceTree = "<group>"; };
+		AF3BA41F13B7DBD700D32708 /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		AF3BA42113B7DC2A00D32708 /* JukeboxPrefWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxPrefWindow.h; sourceTree = "<group>"; };
+		AF3BA42213B7DC2B00D32708 /* JukeboxPrefWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxPrefWindow.m; sourceTree = "<group>"; };
+		AFCE78CA1416F63C00E22468 /* tinyjukebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tinyjukebox.png; sourceTree = "<group>"; };
+		AFCE78CC1417028C00E22468 /* jukebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jukebox.png; sourceTree = "<group>"; };
+		AFCE78CE141702A500E22468 /* jukebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jukebox.png; sourceTree = "<group>"; };
+		AFD1E28C13C5598D000AFFFF /* HttpAudioScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpAudioScanner.h; sourceTree = "<group>"; };
+		AFD1E28D13C5598D000AFFFF /* HttpAudioScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpAudioScanner.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF3BA2AC13A6F64500D32708 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF3BA3D213B2E4CF00D32708 /* libsqlite3.dylib in Frameworks */,
+				AF3BA2D313A6F69900D32708 /* Security.framework in Frameworks */,
+				AF3BA2D113A6F65400D32708 /* AudioToolbox.framework in Frameworks */,
+				AF3BA2B413A6F64500D32708 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF3BA2A413A6F64500D32708 = {
+			isa = PBXGroup;
+			children = (
+				AFCE78CE141702A500E22468 /* jukebox.png */,
+				AF3BA41B13B7DB8800D32708 /* DBPrefsWindowController */,
+				AF3BA41713B7DB7E00D32708 /* URLParser */,
+				AF3BA3BA13B2D5F900D32708 /* Fmdb */,
+				AF3BA3B613A868DC00D32708 /* THIRDPARTY-LICENSES.txt */,
+				AF3BA3B313A8667B00D32708 /* LICENSE.txt */,
+				AF3BA3AE13A865F000D32708 /* AudioStreamer */,
+				AF3BA37513A860A200D32708 /* HTTP */,
+				AF3BA34E13A85FF800D32708 /* SBJSON */,
+				AF3BA2D513A6F6D700D32708 /* Resources */,
+				AF3BA2B913A6F64500D32708 /* TinyJukebox */,
+				AF3BA2B213A6F64500D32708 /* Frameworks */,
+				AF3BA2B013A6F64500D32708 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF3BA2B013A6F64500D32708 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF3BA2AF13A6F64500D32708 /* TinyJukebox.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF3BA2B213A6F64500D32708 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF3BA3D113B2E4CF00D32708 /* libsqlite3.dylib */,
+				AF3BA2D213A6F69900D32708 /* Security.framework */,
+				AF3BA2D013A6F65400D32708 /* AudioToolbox.framework */,
+				AF3BA2B313A6F64500D32708 /* Cocoa.framework */,
+				AF3BA2B513A6F64500D32708 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF3BA2B513A6F64500D32708 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF3BA2B613A6F64500D32708 /* AppKit.framework */,
+				AF3BA2B713A6F64500D32708 /* CoreData.framework */,
+				AF3BA2B813A6F64500D32708 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		AF3BA2B913A6F64500D32708 /* TinyJukebox */ = {
+			isa = PBXGroup;
+			children = (
+				AF3BA31213A6F86100D32708 /* AudioTag.h */,
+				AF3BA31313A6F86100D32708 /* AudioTag.m */,
+				AF3BA31413A6F86100D32708 /* JukeboxConfig.h */,
+				AF3BA31513A6F86100D32708 /* JukeboxConfig.m */,
+				AF3BA31613A6F86100D32708 /* JukeboxHttpConnection.h */,
+				AF3BA31713A6F86100D32708 /* JukeboxHttpConnection.m */,
+				AF3BA2C513A6F64500D32708 /* TinyJukeboxAppDelegate.h */,
+				AF3BA2C613A6F64500D32708 /* TinyJukeboxAppDelegate.m */,
+				AF3BA2C813A6F64500D32708 /* MainMenu.xib */,
+				AF3BA2BA13A6F64500D32708 /* Supporting Files */,
+				AF3BA3C613B2D90A00D32708 /* JukeboxData.h */,
+				AF3BA3C713B2D90A00D32708 /* JukeboxData.m */,
+				AF3BA3D313B4306800D32708 /* FSAudioScanner.h */,
+				AF3BA3D413B4306800D32708 /* FSAudioScanner.m */,
+				AF3BA3DA13B68A3900D32708 /* Util.h */,
+				AF3BA3DB13B68A3900D32708 /* Util.m */,
+				AF3BA3E513B7B73200D32708 /* JukeboxWebsocket.h */,
+				AF3BA3E613B7B73300D32708 /* JukeboxWebsocket.m */,
+				AF3BA41F13B7DBD700D32708 /* Preferences.xib */,
+				AF3BA42113B7DC2A00D32708 /* JukeboxPrefWindow.h */,
+				AF3BA42213B7DC2B00D32708 /* JukeboxPrefWindow.m */,
+				AFD1E28C13C5598D000AFFFF /* HttpAudioScanner.h */,
+				AFD1E28D13C5598D000AFFFF /* HttpAudioScanner.m */,
+			);
+			path = TinyJukebox;
+			sourceTree = "<group>";
+		};
+		AF3BA2BA13A6F64500D32708 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AFCE78CC1417028C00E22468 /* jukebox.png */,
+				AFCE78CA1416F63C00E22468 /* tinyjukebox.png */,
+				AF3BA2BB13A6F64500D32708 /* TinyJukebox-Info.plist */,
+				AF3BA2BC13A6F64500D32708 /* InfoPlist.strings */,
+				AF3BA2BF13A6F64500D32708 /* TinyJukebox-Prefix.pch */,
+				AF3BA2C013A6F64500D32708 /* main.m */,
+				AF3BA2C213A6F64500D32708 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AF3BA2D513A6F6D700D32708 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AF3BA31B13A6F9AA00D32708 /* Web */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AF3BA34E13A85FF800D32708 /* SBJSON */ = {
+			isa = PBXGroup;
+			children = (
+				AF3BA34F13A85FF800D32708 /* JSON.h */,
+				AF3BA35013A85FF800D32708 /* NSObject+SBJson.h */,
+				AF3BA35113A85FF800D32708 /* NSObject+SBJson.m */,
+				AF3BA35213A85FF800D32708 /* SBJson.h */,
+				AF3BA35313A85FF800D32708 /* SBJsonParser.h */,
+				AF3BA35413A85FF800D32708 /* SBJsonParser.m */,
+				AF3BA35513A85FF800D32708 /* SBJsonStreamParser.h */,
+				AF3BA35613A85FF800D32708 /* SBJsonStreamParser.m */,
+				AF3BA35713A85FF800D32708 /* SBJsonStreamParserAccumulator.h */,
+				AF3BA35813A85FF800D32708 /* SBJsonStreamParserAccumulator.m */,
+				AF3BA35913A85FF800D32708 /* SBJsonStreamParserAdapter.h */,
+				AF3BA35A13A85FF800D32708 /* SBJsonStreamParserAdapter.m */,
+				AF3BA35B13A85FF800D32708 /* SBJsonStreamParserState.h */,
+				AF3BA35C13A85FF800D32708 /* SBJsonStreamParserState.m */,
+				AF3BA35D13A85FF800D32708 /* SBJsonStreamWriter.h */,
+				AF3BA35E13A85FF800D32708 /* SBJsonStreamWriter.m */,
+				AF3BA35F13A85FF800D32708 /* SBJsonStreamWriterAccumulator.h */,
+				AF3BA36013A85FF800D32708 /* SBJsonStreamWriterAccumulator.m */,
+				AF3BA36113A85FF800D32708 /* SBJsonStreamWriterState.h */,
+				AF3BA36213A85FF800D32708 /* SBJsonStreamWriterState.m */,
+				AF3BA36313A85FF800D32708 /* SBJsonTokeniser.h */,
+				AF3BA36413A85FF800D32708 /* SBJsonTokeniser.m */,
+				AF3BA36513A85FF800D32708 /* SBJsonUTF8Stream.h */,
+				AF3BA36613A85FF800D32708 /* SBJsonUTF8Stream.m */,
+				AF3BA36713A85FF800D32708 /* SBJsonWriter.h */,
+				AF3BA36813A85FF800D32708 /* SBJsonWriter.m */,
+			);
+			path = SBJSON;
+			sourceTree = "<group>";
+		};
+		AF3BA37513A860A200D32708 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				AF3BA37613A860A200D32708 /* DDASLLogger.h */,
+				AF3BA37713A860A200D32708 /* DDASLLogger.m */,
+				AF3BA37813A860A200D32708 /* DDData.h */,
+				AF3BA37913A860A200D32708 /* DDData.m */,
+				AF3BA37A13A860A200D32708 /* DDFileLogger.h */,
+				AF3BA37B13A860A200D32708 /* DDFileLogger.m */,
+				AF3BA37C13A860A200D32708 /* DDLog.h */,
+				AF3BA37D13A860A200D32708 /* DDLog.m */,
+				AF3BA37E13A860A200D32708 /* DDNumber.h */,
+				AF3BA37F13A860A200D32708 /* DDNumber.m */,
+				AF3BA38013A860A200D32708 /* DDRange.h */,
+				AF3BA38113A860A200D32708 /* DDRange.m */,
+				AF3BA38213A860A200D32708 /* DDTTYLogger.h */,
+				AF3BA38313A860A200D32708 /* DDTTYLogger.m */,
+				AF3BA38413A860A200D32708 /* GCDAsyncSocket.h */,
+				AF3BA38513A860A200D32708 /* GCDAsyncSocket.m */,
+				AF3BA38613A860A200D32708 /* HTTPAsyncFileResponse.h */,
+				AF3BA38713A860A200D32708 /* HTTPAsyncFileResponse.m */,
+				AF3BA38813A860A200D32708 /* HTTPAuthenticationRequest.h */,
+				AF3BA38913A860A200D32708 /* HTTPAuthenticationRequest.m */,
+				AF3BA38A13A860A200D32708 /* HTTPConnection.h */,
+				AF3BA38B13A860A200D32708 /* HTTPConnection.m */,
+				AF3BA38C13A860A200D32708 /* HTTPDataResponse.h */,
+				AF3BA38D13A860A200D32708 /* HTTPDataResponse.m */,
+				AF3BA38E13A860A200D32708 /* HTTPDynamicFileResponse.h */,
+				AF3BA38F13A860A200D32708 /* HTTPDynamicFileResponse.m */,
+				AF3BA39013A860A200D32708 /* HTTPFileResponse.h */,
+				AF3BA39113A860A200D32708 /* HTTPFileResponse.m */,
+				AF3BA39213A860A200D32708 /* HTTPLogging.h */,
+				AF3BA39313A860A200D32708 /* HTTPMessage.h */,
+				AF3BA39413A860A200D32708 /* HTTPMessage.m */,
+				AF3BA39513A860A200D32708 /* HTTPRedirectResponse.h */,
+				AF3BA39613A860A200D32708 /* HTTPRedirectResponse.m */,
+				AF3BA39713A860A200D32708 /* HTTPResponse.h */,
+				AF3BA39813A860A200D32708 /* HTTPServer.h */,
+				AF3BA39913A860A200D32708 /* HTTPServer.m */,
+				AF3BA39A13A860A200D32708 /* WebSocket.h */,
+				AF3BA39B13A860A200D32708 /* WebSocket.m */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		AF3BA3AE13A865F000D32708 /* AudioStreamer */ = {
+			isa = PBXGroup;
+			children = (
+				AF3BA3AF13A865F000D32708 /* AudioStreamer.h */,
+				AF3BA3B013A865F000D32708 /* AudioStreamer.m */,
+			);
+			path = AudioStreamer;
+			sourceTree = "<group>";
+		};
+		AF3BA3BA13B2D5F900D32708 /* Fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				AF3BA3BB13B2D5F900D32708 /* FMDatabase.h */,
+				AF3BA3BC13B2D5F900D32708 /* FMDatabase.m */,
+				AF3BA3BD13B2D5F900D32708 /* FMDatabaseAdditions.h */,
+				AF3BA3BE13B2D5F900D32708 /* FMDatabaseAdditions.m */,
+				AF3BA3C013B2D5F900D32708 /* FMResultSet.h */,
+				AF3BA3C113B2D5F900D32708 /* FMResultSet.m */,
+			);
+			path = Fmdb;
+			sourceTree = "<group>";
+		};
+		AF3BA41713B7DB7E00D32708 /* URLParser */ = {
+			isa = PBXGroup;
+			children = (
+				AF3BA41813B7DB7F00D32708 /* URLParser.h */,
+				AF3BA41913B7DB7F00D32708 /* URLParser.m */,
+			);
+			path = URLParser;
+			sourceTree = "<group>";
+		};
+		AF3BA41B13B7DB8800D32708 /* DBPrefsWindowController */ = {
+			isa = PBXGroup;
+			children = (
+				AF3BA41C13B7DB8800D32708 /* DBPrefsWindowController.h */,
+				AF3BA41D13B7DB8800D32708 /* DBPrefsWindowController.m */,
+			);
+			path = DBPrefsWindowController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF3BA2AE13A6F64500D32708 /* TinyJukebox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF3BA2CD13A6F64500D32708 /* Build configuration list for PBXNativeTarget "TinyJukebox" */;
+			buildPhases = (
+				AF3BA2AB13A6F64500D32708 /* Sources */,
+				AF3BA2AC13A6F64500D32708 /* Frameworks */,
+				AF3BA2AD13A6F64500D32708 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TinyJukebox;
+			productName = TinyJukebox;
+			productReference = AF3BA2AF13A6F64500D32708 /* TinyJukebox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF3BA2A613A6F64500D32708 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Michael Mattozzi";
+			};
+			buildConfigurationList = AF3BA2A913A6F64500D32708 /* Build configuration list for PBXProject "TinyJukebox" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AF3BA2A413A6F64500D32708;
+			productRefGroup = AF3BA2B013A6F64500D32708 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF3BA2AE13A6F64500D32708 /* TinyJukebox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF3BA2AD13A6F64500D32708 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF3BA2BE13A6F64500D32708 /* InfoPlist.strings in Resources */,
+				AF3BA2C413A6F64500D32708 /* Credits.rtf in Resources */,
+				AF3BA2CA13A6F64500D32708 /* MainMenu.xib in Resources */,
+				AF3BA31C13A6F9AA00D32708 /* Web in Resources */,
+				AF3BA3B513A8667B00D32708 /* LICENSE.txt in Resources */,
+				AF3BA3B713A868DC00D32708 /* THIRDPARTY-LICENSES.txt in Resources */,
+				AF3BA42013B7DBD800D32708 /* Preferences.xib in Resources */,
+				AFCE78CB1416F63C00E22468 /* tinyjukebox.png in Resources */,
+				AFCE78CD1417028C00E22468 /* jukebox.png in Resources */,
+				AFCE78CF141702A600E22468 /* jukebox.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF3BA2AB13A6F64500D32708 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF3BA2C113A6F64500D32708 /* main.m in Sources */,
+				AF3BA2C713A6F64500D32708 /* TinyJukeboxAppDelegate.m in Sources */,
+				AF3BA31813A6F86100D32708 /* AudioTag.m in Sources */,
+				AF3BA31913A6F86100D32708 /* JukeboxConfig.m in Sources */,
+				AF3BA31A13A6F86100D32708 /* JukeboxHttpConnection.m in Sources */,
+				AF3BA36913A85FF800D32708 /* NSObject+SBJson.m in Sources */,
+				AF3BA36A13A85FF800D32708 /* SBJsonParser.m in Sources */,
+				AF3BA36B13A85FF800D32708 /* SBJsonStreamParser.m in Sources */,
+				AF3BA36C13A85FF800D32708 /* SBJsonStreamParserAccumulator.m in Sources */,
+				AF3BA36D13A85FF800D32708 /* SBJsonStreamParserAdapter.m in Sources */,
+				AF3BA36E13A85FF800D32708 /* SBJsonStreamParserState.m in Sources */,
+				AF3BA36F13A85FF800D32708 /* SBJsonStreamWriter.m in Sources */,
+				AF3BA37013A85FF800D32708 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				AF3BA37113A85FF800D32708 /* SBJsonStreamWriterState.m in Sources */,
+				AF3BA37213A85FF800D32708 /* SBJsonTokeniser.m in Sources */,
+				AF3BA37313A85FF800D32708 /* SBJsonUTF8Stream.m in Sources */,
+				AF3BA37413A85FF800D32708 /* SBJsonWriter.m in Sources */,
+				AF3BA39C13A860A200D32708 /* DDASLLogger.m in Sources */,
+				AF3BA39D13A860A200D32708 /* DDData.m in Sources */,
+				AF3BA39E13A860A200D32708 /* DDFileLogger.m in Sources */,
+				AF3BA39F13A860A200D32708 /* DDLog.m in Sources */,
+				AF3BA3A013A860A200D32708 /* DDNumber.m in Sources */,
+				AF3BA3A113A860A200D32708 /* DDRange.m in Sources */,
+				AF3BA3A213A860A200D32708 /* DDTTYLogger.m in Sources */,
+				AF3BA3A313A860A200D32708 /* GCDAsyncSocket.m in Sources */,
+				AF3BA3A413A860A200D32708 /* HTTPAsyncFileResponse.m in Sources */,
+				AF3BA3A513A860A200D32708 /* HTTPAuthenticationRequest.m in Sources */,
+				AF3BA3A613A860A200D32708 /* HTTPConnection.m in Sources */,
+				AF3BA3A713A860A200D32708 /* HTTPDataResponse.m in Sources */,
+				AF3BA3A813A860A200D32708 /* HTTPDynamicFileResponse.m in Sources */,
+				AF3BA3A913A860A200D32708 /* HTTPFileResponse.m in Sources */,
+				AF3BA3AA13A860A200D32708 /* HTTPMessage.m in Sources */,
+				AF3BA3AB13A860A200D32708 /* HTTPRedirectResponse.m in Sources */,
+				AF3BA3AC13A860A200D32708 /* HTTPServer.m in Sources */,
+				AF3BA3AD13A860A200D32708 /* WebSocket.m in Sources */,
+				AF3BA3B113A865F000D32708 /* AudioStreamer.m in Sources */,
+				AF3BA3C213B2D5F900D32708 /* FMDatabase.m in Sources */,
+				AF3BA3C313B2D5F900D32708 /* FMDatabaseAdditions.m in Sources */,
+				AF3BA3C513B2D5F900D32708 /* FMResultSet.m in Sources */,
+				AF3BA3C813B2D90A00D32708 /* JukeboxData.m in Sources */,
+				AF3BA3D513B4306800D32708 /* FSAudioScanner.m in Sources */,
+				AF3BA3DC13B68A3A00D32708 /* Util.m in Sources */,
+				AF3BA3E713B7B73300D32708 /* JukeboxWebsocket.m in Sources */,
+				AF3BA41A13B7DB7F00D32708 /* URLParser.m in Sources */,
+				AF3BA41E13B7DB8800D32708 /* DBPrefsWindowController.m in Sources */,
+				AF3BA42313B7DC2B00D32708 /* JukeboxPrefWindow.m in Sources */,
+				AFD1E28E13C5598D000AFFFF /* HttpAudioScanner.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AF3BA2BC13A6F64500D32708 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF3BA2BD13A6F64500D32708 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AF3BA2C213A6F64500D32708 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF3BA2C313A6F64500D32708 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		AF3BA2C813A6F64500D32708 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF3BA2C913A6F64500D32708 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF3BA2CB13A6F64500D32708 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AF3BA2CC13A6F64500D32708 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AF3BA2CE13A6F64500D32708 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TinyJukebox/TinyJukebox-Prefix.pch";
+				INFOPLIST_FILE = "TinyJukebox/TinyJukebox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AF3BA2CF13A6F64500D32708 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TinyJukebox/TinyJukebox-Prefix.pch";
+				INFOPLIST_FILE = "TinyJukebox/TinyJukebox-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF3BA2A913A6F64500D32708 /* Build configuration list for PBXProject "TinyJukebox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF3BA2CB13A6F64500D32708 /* Debug */,
+				AF3BA2CC13A6F64500D32708 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF3BA2CD13A6F64500D32708 /* Build configuration list for PBXNativeTarget "TinyJukebox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF3BA2CE13A6F64500D32708 /* Debug */,
+				AF3BA2CF13A6F64500D32708 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF3BA2A613A6F64500D32708 /* Project object */;
+}
