@@ -47,6 +47,7 @@
 - (void) reloadServer;
 
 // Menu actions
+- (IBAction) openPlayer:(id)sender;
 - (IBAction) rescan:(id)sender;
 - (IBAction) openConfig:(id)sender;
 - (IBAction) about:(id)sender;

@@ -1318,6 +1318,14 @@
 				<string key="NSTitle"/>
 				<object class="NSMutableArray" key="NSMenuItems">
 					<bool key="EncodedWithXMLCoder">YES</bool>
+					<object class="NSMenuItem" id="856230337">
+						<reference key="NSMenu" ref="357810879"/>
+						<string key="NSTitle">Open Player...</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
 					<object class="NSMenuItem" id="492974638">
 						<reference key="NSMenu" ref="357810879"/>
 						<string key="NSTitle">Rescan</string>
@@ -1336,7 +1344,7 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="961524837">
+					<object class="NSMenuItem" id="618273148">
 						<reference key="NSMenu" ref="357810879"/>
 						<bool key="NSIsDisabled">YES</bool>
 						<string key="NSTitle">All files indexed</string>
@@ -1345,7 +1353,7 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="518865243">
+					<object class="NSMenuItem" id="34706451">
 						<reference key="NSMenu" ref="357810879"/>
 						<bool key="NSIsDisabled">YES</bool>
 						<bool key="NSIsSeparator">YES</bool>
@@ -2118,7 +2126,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">indexStatusMenuItem</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="961524837"/>
+						<reference key="destination" ref="618273148"/>
 					</object>
 					<int key="connectionID">577</int>
 				</object>
@@ -2129,6 +2137,14 @@
 						<reference key="destination" ref="954664146"/>
 					</object>
 					<int key="connectionID">578</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">openPlayer:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="856230337"/>
+					</object>
+					<int key="connectionID">580</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3168,8 +3184,9 @@
 							<reference ref="297420880"/>
 							<reference ref="655924042"/>
 							<reference ref="365368027"/>
-							<reference ref="961524837"/>
-							<reference ref="518865243"/>
+							<reference ref="618273148"/>
+							<reference ref="34706451"/>
+							<reference ref="856230337"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -3205,12 +3222,17 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">575</int>
-						<reference key="object" ref="961524837"/>
+						<reference key="object" ref="618273148"/>
 						<reference key="parent" ref="357810879"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">576</int>
-						<reference key="object" ref="518865243"/>
+						<reference key="object" ref="34706451"/>
+						<reference key="parent" ref="357810879"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">579</int>
+						<reference key="object" ref="856230337"/>
 						<reference key="parent" ref="357810879"/>
 					</object>
 				</object>
@@ -3448,6 +3470,7 @@
 					<string>57.editorWindowContentRectSynchronizationRect</string>
 					<string>575.IBPluginDependency</string>
 					<string>576.IBPluginDependency</string>
+					<string>579.IBPluginDependency</string>
 					<string>58.IBPluginDependency</string>
 					<string>58.ImportedFromIB2</string>
 					<string>72.IBPluginDependency</string>
@@ -3713,6 +3736,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
@@ -3754,7 +3778,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">578</int>
+			<int key="maxID">580</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3835,10 +3859,12 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>about:</string>
 							<string>openConfig:</string>
+							<string>openPlayer:</string>
 							<string>rescan:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -3850,6 +3876,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>about:</string>
 							<string>openConfig:</string>
+							<string>openPlayer:</string>
 							<string>rescan:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -3860,6 +3887,10 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">openConfig:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">openPlayer:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">

@@ -216,11 +216,7 @@ static TinyJukeboxAppDelegate *singleton = nil;
 
 - (void) removeWebSocket:(JukeboxWebsocket *)websocket {
     @synchronized(webSockets) {
-        for (id ws in webSockets) {
-            if (ws == websocket) {
-                [self.webSockets removeObject:ws];
-            }
-        }
+        [self.webSockets removeObject:websocket];
         NSLog(@"Removed websocket");
     }
 }
@@ -317,6 +313,10 @@ static TinyJukeboxAppDelegate *singleton = nil;
 
 
 #pragma mark GUI actions
+
+- (IBAction) openPlayer:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:%d", jukeboxConfig.port]]]; 
+}
 
 - (IBAction) rescan:(id)sender {
     [NSThread detachNewThreadSelector:@selector(rescan:) toTarget:[FSAudioScanner class] withObject:jukeboxConfig];
