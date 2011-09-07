@@ -1336,7 +1336,7 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="269313216">
+					<object class="NSMenuItem" id="961524837">
 						<reference key="NSMenu" ref="357810879"/>
 						<bool key="NSIsDisabled">YES</bool>
 						<string key="NSTitle">All files indexed</string>
@@ -1345,7 +1345,7 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="5318197">
+					<object class="NSMenuItem" id="518865243">
 						<reference key="NSMenu" ref="357810879"/>
 						<bool key="NSIsDisabled">YES</bool>
 						<bool key="NSIsSeparator">YES</bool>
@@ -2118,9 +2118,17 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">indexStatusMenuItem</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="269313216"/>
+						<reference key="destination" ref="961524837"/>
 					</object>
 					<int key="connectionID">577</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">about:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="954664146"/>
+					</object>
+					<int key="connectionID">578</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3160,8 +3168,8 @@
 							<reference ref="297420880"/>
 							<reference ref="655924042"/>
 							<reference ref="365368027"/>
-							<reference ref="269313216"/>
-							<reference ref="5318197"/>
+							<reference ref="961524837"/>
+							<reference ref="518865243"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -3197,12 +3205,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">575</int>
-						<reference key="object" ref="269313216"/>
+						<reference key="object" ref="961524837"/>
 						<reference key="parent" ref="357810879"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">576</int>
-						<reference key="object" ref="5318197"/>
+						<reference key="object" ref="518865243"/>
 						<reference key="parent" ref="357810879"/>
 					</object>
 				</object>
@@ -3746,7 +3754,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">577</int>
+			<int key="maxID">578</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3825,11 +3833,13 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>about:</string>
 							<string>openConfig:</string>
 							<string>rescan:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>
@@ -3838,11 +3848,16 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>about:</string>
 							<string>openConfig:</string>
 							<string>rescan:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">about:</string>
+								<string key="candidateClassName">id</string>
+							</object>
 							<object class="IBActionInfo">
 								<string key="name">openConfig:</string>
 								<string key="candidateClassName">id</string>

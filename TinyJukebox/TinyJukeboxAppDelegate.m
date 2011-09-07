@@ -328,6 +328,10 @@ static TinyJukeboxAppDelegate *singleton = nil;
     [[JukeboxPrefWindow sharedPrefsWindowController] showWindow:nil];
 }
 
+- (IBAction) about:(id)sender {
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://github.com/mmattozzi/TinyJukebox"]]; 
+}
+
 - (void) setStatusToIndexing {
     NSMutableDictionary *tmp = [[NSMutableDictionary alloc] initWithCapacity:1];
     [tmp setObject:@"reindex" forKey:@"status"];

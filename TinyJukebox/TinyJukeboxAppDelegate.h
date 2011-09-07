@@ -49,6 +49,7 @@
 // Menu actions
 - (IBAction) rescan:(id)sender;
 - (IBAction) openConfig:(id)sender;
+- (IBAction) about:(id)sender;
 
 // Actions invokable from HTTP
 - (void) addToQueue:(NSString *)key;
