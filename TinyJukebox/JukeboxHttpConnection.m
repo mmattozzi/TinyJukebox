@@ -189,9 +189,12 @@
         }
         
         NSString *fullPath = [NSString stringWithFormat:@"Web/%@", relativePath];
-        // NSString *webPath = [[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:fullPath] autorelease];
         
-        NSString *webPath = [NSString stringWithFormat:@"/Users/mmattozzi/workspace/TinyJukebox/%@", fullPath];
+        // Use for releases
+        NSString *webPath = [[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:fullPath] autorelease];
+        
+        // Use when debugging, edits appear immediately
+        // NSString *webPath = [NSString stringWithFormat:@"/Users/mmattozzi/workspace/TinyJukebox/%@", fullPath];
         
 		return [[[HTTPDynamicFileResponse alloc] initWithFilePath:webPath
 		                                            forConnection:self
