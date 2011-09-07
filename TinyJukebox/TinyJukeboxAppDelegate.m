@@ -329,7 +329,9 @@ static TinyJukeboxAppDelegate *singleton = nil;
 }
 
 - (IBAction) about:(id)sender {
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://github.com/mmattozzi/TinyJukebox"]]; 
+	// [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://github.com/mmattozzi/TinyJukebox"]];
+    [NSApp activateIgnoringOtherApps: YES];
+    [[NSApplication sharedApplication] orderFrontStandardAboutPanel:self];
 }
 
 - (void) setStatusToIndexing {
