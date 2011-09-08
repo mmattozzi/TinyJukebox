@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
 	<channel>
 		<title>Tiny Jukebox's Changelog</title>
-		<link>http://raw.github.com/mmattozzi/TinyJukebox/master/appcast.xml</link>
+		<link>https://raw.github.com/mmattozzi/TinyJukebox/master/appcast.xml</link>
 		<description>Most recent changes with links to updates.</description>
 		<language>en</language>
 		<item>
 			<title>Version 0.1.1</title>
-			<sparkle:releaseNotesLink>http://you.com/app/2.0.html</sparkle:releaseNotesLink>
+			<!-- <sparkle:releaseNotesLink>http://you.com/app/2.0.html</sparkle:releaseNotesLink> -->
 			<pubDate>Tue, 06 Sep 2011 19:20:11 +0000</pubDate>
-			<enclosure url="http://github.com/downloads/mmattozzi/TinyJukebox/TinyJukebox-0.1.1.dmg" 
+			<enclosure url="https://github.com/downloads/mmattozzi/TinyJukebox/TinyJukebox-0.1.1.dmg" 
 				sparkle:version="0.1.1" length="1313738" 
 				type="application/octet-stream" 
 				sparkle:dsaSignature="MC0CFQCM/i7GeX15KsSLD+NdYaBn2ZWcYgIUaH0OBckuTnxnoeHYF+K5ypt77KQ=" />

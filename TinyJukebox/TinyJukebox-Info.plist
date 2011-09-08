@@ -44,5 +44,7 @@
 	<array/>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
+	<key>SUFeedURL</key>
+	<string>https://raw.github.com/mmattozzi/TinyJukebox/master/appcast.xml</string>
 </dict>
 </plist>
