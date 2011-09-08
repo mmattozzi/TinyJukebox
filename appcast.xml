@@ -7,7 +7,7 @@
 		<language>en</language>
 		<item>
 			<title>Version 0.1.2</title>
-			<!-- <sparkle:releaseNotesLink>http://you.com/app/2.0.html</sparkle:releaseNotesLink> -->
+			<sparkle:releaseNotesLink>https://raw.github.com/mmattozzi/TinyJukebox/master/ReleaseNotes/0.1.2.html</sparkle:releaseNotesLink>
 			<pubDate>Tue, 07 Sep 2011 23:58:00 -0400</pubDate>
 			<enclosure url="https://github.com/downloads/mmattozzi/TinyJukebox/TinyJukebox-0.1.2.dmg" 
 				sparkle:version="2" length="2223004" 
