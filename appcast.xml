@@ -10,17 +10,18 @@
 			<!-- <sparkle:releaseNotesLink>http://you.com/app/2.0.html</sparkle:releaseNotesLink> -->
 			<pubDate>Tue, 07 Sep 2011 23:58:00 -0400</pubDate>
 			<enclosure url="https://github.com/downloads/mmattozzi/TinyJukebox/TinyJukebox-0.1.2.dmg" 
-				sparkle:version="1" length="2223004" 
+				sparkle:version="2" length="2223004" 
 				sparkle:shortVersionString="0.1.2" 
 				type="application/octet-stream" 
-				sparkle:dsaSignature="MCwCFDRuo5Q7MEnnzCcl0IrWTjQv/wcvAhRs3lAO0L+lCIu5p9O+jzwiiPsfIg==" />
+				sparkle:dsaSignature="MC0CFQCw/wB4EVHp6qYA+7iLy60x+0frSAIUeyqO/thoGimAMzwCKphbs8ACOOE=" />
 		</item>
 		<item>
 			<title>Version 0.1.1</title>
 			<!-- <sparkle:releaseNotesLink>http://you.com/app/2.0.html</sparkle:releaseNotesLink> -->
 			<pubDate>Tue, 06 Sep 2011 19:20:11 +0000</pubDate>
 			<enclosure url="https://github.com/downloads/mmattozzi/TinyJukebox/TinyJukebox-0.1.1.dmg" 
-				sparkle:version="0.1.1" length="1313738" 
+				sparkle:version="1" length="1313738"
+				sparkle:shortVersionString="0.1.1" 
 				type="application/octet-stream" 
 				sparkle:dsaSignature="MC0CFQCM/i7GeX15KsSLD+NdYaBn2ZWcYgIUaH0OBckuTnxnoeHYF+K5ypt77KQ=" />
 		</item>
