@@ -66,8 +66,24 @@
 		AFCE78CB1416F63C00E22468 /* tinyjukebox.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCE78CA1416F63C00E22468 /* tinyjukebox.png */; };
 		AFCE790D14170F1700E22468 /* jukebox.icns in Resources */ = {isa = PBXBuildFile; fileRef = AFCE790C14170F1700E22468 /* jukebox.icns */; };
 		AFCE792D14171B9500E22468 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = AFCE792C14171B9500E22468 /* Credits.html */; };
+		AFCE792F14186C5C00E22468 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCE792E14186C5C00E22468 /* Sparkle.framework */; };
+		AFCE793114186CA800E22468 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AFCE792E14186C5C00E22468 /* Sparkle.framework */; };
+		AFCE793314186EBF00E22468 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = AFCE793214186EBF00E22468 /* dsa_pub.pem */; };
 		AFD1E28E13C5598D000AFFFF /* HttpAudioScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD1E28D13C5598D000AFFFF /* HttpAudioScanner.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AFCE793014186C9000E22468 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AFCE793114186CA800E22468 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AF3BA2AF13A6F64500D32708 /* TinyJukebox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyJukebox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +200,8 @@
 		AFCE78CA1416F63C00E22468 /* tinyjukebox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tinyjukebox.png; sourceTree = "<group>"; };
 		AFCE790C14170F1700E22468 /* jukebox.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = jukebox.icns; sourceTree = "<group>"; };
 		AFCE792C14171B9500E22468 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		AFCE792E14186C5C00E22468 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		AFCE793214186EBF00E22468 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		AFD1E28C13C5598D000AFFFF /* HttpAudioScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpAudioScanner.h; sourceTree = "<group>"; };
 		AFD1E28D13C5598D000AFFFF /* HttpAudioScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpAudioScanner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +215,7 @@
 				AF3BA2D313A6F69900D32708 /* Security.framework in Frameworks */,
 				AF3BA2D113A6F65400D32708 /* AudioToolbox.framework in Frameworks */,
 				AF3BA2B413A6F64500D32708 /* Cocoa.framework in Frameworks */,
+				AFCE792F14186C5C00E22468 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +252,7 @@
 		AF3BA2B213A6F64500D32708 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AFCE792E14186C5C00E22468 /* Sparkle.framework */,
 				AF3BA3D113B2E4CF00D32708 /* libsqlite3.dylib */,
 				AF3BA2D213A6F69900D32708 /* Security.framework */,
 				AF3BA2D013A6F65400D32708 /* AudioToolbox.framework */,
@@ -298,6 +318,7 @@
 		AF3BA2D513A6F6D700D32708 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AFCE793214186EBF00E22468 /* dsa_pub.pem */,
 				AF3BA31B13A6F9AA00D32708 /* Web */,
 			);
 			name = Resources;
@@ -431,6 +452,7 @@
 				AF3BA2AB13A6F64500D32708 /* Sources */,
 				AF3BA2AC13A6F64500D32708 /* Frameworks */,
 				AF3BA2AD13A6F64500D32708 /* Resources */,
+				AFCE793014186C9000E22468 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -480,6 +502,7 @@
 				AFCE78CB1416F63C00E22468 /* tinyjukebox.png in Resources */,
 				AFCE790D14170F1700E22468 /* jukebox.icns in Resources */,
 				AFCE792D14171B9500E22468 /* Credits.html in Resources */,
+				AFCE793314186EBF00E22468 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +622,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = required;
@@ -616,6 +643,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
