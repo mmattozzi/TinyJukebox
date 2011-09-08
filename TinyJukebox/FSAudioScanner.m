@@ -30,7 +30,7 @@
 }
 
 + (BOOL) hasAudioExtension:(NSString *)file {
-    return ( [file hasSuffix:@".mp3"] || [file hasSuffix:@".aac"] || [file hasSuffix:@".mp4"] );
+    return ( [file hasSuffix:@".mp3"] || [file hasSuffix:@".aac"] || [file hasSuffix:@".mp4"] || [file hasSuffix:@".m4a"] );
 }
 
 + (void) rescan:(JukeboxConfig *)jukeboxConfig {
