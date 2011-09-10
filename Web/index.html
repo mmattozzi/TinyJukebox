@@ -108,7 +108,7 @@
             		var cssClass = (rowNum % 2 == 0 ? "evenSong" : "oddSong");
             		var all = $("<li class='" + cssClass + "'> *** Queue All *** </li>");
             		all.click(function() {
-            			$.get("/api/addAlbumToQueue?server=" + data[0].server + "&artist=" + data[0].artist + "&album=" + data[0].album);
+            			$.get("/api/addAlbumToQueue?server=" + data[0].server + "&artist=" + escp(data[0].artist) + "&album=" + escp(data[0].album));
             		});
             		ul.append(all);
             		rowNum++;
@@ -163,14 +163,14 @@
             function loadAlbums() {
             	$("#albums").empty();
             	$("#tracks").empty();
-            	$.get("/api/albums?server=" + currentServer + "&artist=" + currentArtist, function(data) {
+            	$.get("/api/albums?server=" + currentServer + "&artist=" + escp(currentArtist), function(data) {
             		displayRowData(data, "#albums");
             	}, "json");
             }
             
             function loadTracks() {
             	$("#tracks").empty();
-            	$.get("/api/playable?server=" + currentServer + "&artist=" + currentArtist + "&album=" + currentAlbum, function(data) {
+            	$.get("/api/playable?server=" + currentServer + "&artist=" + escp(currentArtist) + "&album=" + escp(currentAlbum), function(data) {
             		displayRowData(data, "#tracks");
             	}, "json");
             }
@@ -183,6 +183,10 @@
             			displayRowData(data, "#playlist");
             		} 
             	}, "json");
+            }
+            
+            function escp(s) {
+            	return s.replace(/&/g, "%26");
             }
             
         </script>
