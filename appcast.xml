@@ -6,6 +6,16 @@
 		<description>Most recent changes with links to updates.</description>
 		<language>en</language>
 		<item>
+			<title>Version 0.1.4</title>
+			<sparkle:releaseNotesLink>https://raw.github.com/mmattozzi/TinyJukebox/master/ReleaseNotes/0.1.4.html</sparkle:releaseNotesLink>
+			<pubDate>Thu, 15 Sep 2011 00:24:00 -0400</pubDate>
+			<enclosure url="https://github.com/downloads/mmattozzi/TinyJukebox/TinyJukebox-0.1.4.dmg" 
+				sparkle:version="4" length="2252530" 
+				sparkle:shortVersionString="0.1.4" 
+				type="application/octet-stream" 
+				sparkle:dsaSignature="MCwCFDCpBcbJtfpOOy/obHp8oe1KmpVUAhR/YCPkdyA1gRj26rc8M0G9e+XI7A==" />
+		</item>
+		<item>
 			<title>Version 0.1.3</title>
 			<sparkle:releaseNotesLink>https://raw.github.com/mmattozzi/TinyJukebox/master/ReleaseNotes/0.1.3.html</sparkle:releaseNotesLink>
 			<pubDate>Sun, 11 Sep 2011 22:18:00 -0400</pubDate>
