@@ -133,6 +133,8 @@
     
     // Remove all local songs, the urls could be wrong!
     [[TinyJukeboxAppDelegate singleton] rescan:nil];
+    
+    [[self window] orderOut:self];
 }
 
 - (IBAction) forgetChanges:(id)sender {
