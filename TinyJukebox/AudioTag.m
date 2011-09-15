@@ -62,6 +62,10 @@
             self.title = [[file lastPathComponent] stringByDeletingPathExtension];
         }
         
+        if (self.artist == nil || [self.artist isEqualToString:@""]) {
+            self.artist = @"Unknown Artist";
+        }
+        
         if (self.album == nil || [self.album isEqualToString:@""]) {
             self.album = @"Unknown Album";
         }
