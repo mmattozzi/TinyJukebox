@@ -51,9 +51,6 @@
 		AF3BA3B113A865F000D32708 /* AudioStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA3B013A865F000D32708 /* AudioStreamer.m */; };
 		AF3BA3B513A8667B00D32708 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF3BA3B313A8667B00D32708 /* LICENSE.txt */; };
 		AF3BA3B713A868DC00D32708 /* THIRDPARTY-LICENSES.txt in Resources */ = {isa = PBXBuildFile; fileRef = AF3BA3B613A868DC00D32708 /* THIRDPARTY-LICENSES.txt */; };
-		AF3BA3C213B2D5F900D32708 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA3BC13B2D5F900D32708 /* FMDatabase.m */; };
-		AF3BA3C313B2D5F900D32708 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA3BE13B2D5F900D32708 /* FMDatabaseAdditions.m */; };
-		AF3BA3C513B2D5F900D32708 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA3C113B2D5F900D32708 /* FMResultSet.m */; };
 		AF3BA3C813B2D90A00D32708 /* JukeboxData.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA3C713B2D90A00D32708 /* JukeboxData.m */; };
 		AF3BA3D213B2E4CF00D32708 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3BA3D113B2E4CF00D32708 /* libsqlite3.dylib */; };
 		AF3BA3D513B4306800D32708 /* FSAudioScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3BA3D413B4306800D32708 /* FSAudioScanner.m */; };
@@ -69,6 +66,10 @@
 		AFCE792F14186C5C00E22468 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCE792E14186C5C00E22468 /* Sparkle.framework */; };
 		AFCE793114186CA800E22468 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AFCE792E14186C5C00E22468 /* Sparkle.framework */; };
 		AFCE793314186EBF00E22468 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = AFCE793214186EBF00E22468 /* dsa_pub.pem */; };
+		AFCE7A011421A9BD00E22468 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCE79F91421A9BD00E22468 /* FMDatabase.m */; };
+		AFCE7A021421A9BD00E22468 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCE79FB1421A9BD00E22468 /* FMDatabaseAdditions.m */; };
+		AFCE7A031421A9BD00E22468 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCE79FD1421A9BD00E22468 /* FMDatabasePool.m */; };
+		AFCE7A051421A9BD00E22468 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCE7A001421A9BD00E22468 /* FMResultSet.m */; };
 		AFD1E28E13C5598D000AFFFF /* HttpAudioScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = AFD1E28D13C5598D000AFFFF /* HttpAudioScanner.m */; };
 /* End PBXBuildFile section */
 
@@ -175,12 +176,6 @@
 		AF3BA3B013A865F000D32708 /* AudioStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioStreamer.m; sourceTree = "<group>"; };
 		AF3BA3B313A8667B00D32708 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		AF3BA3B613A868DC00D32708 /* THIRDPARTY-LICENSES.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "THIRDPARTY-LICENSES.txt"; sourceTree = "<group>"; };
-		AF3BA3BB13B2D5F900D32708 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
-		AF3BA3BC13B2D5F900D32708 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		AF3BA3BD13B2D5F900D32708 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		AF3BA3BE13B2D5F900D32708 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		AF3BA3C013B2D5F900D32708 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
-		AF3BA3C113B2D5F900D32708 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		AF3BA3C613B2D90A00D32708 /* JukeboxData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JukeboxData.h; sourceTree = "<group>"; };
 		AF3BA3C713B2D90A00D32708 /* JukeboxData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JukeboxData.m; sourceTree = "<group>"; };
 		AF3BA3D113B2E4CF00D32708 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -202,6 +197,14 @@
 		AFCE792C14171B9500E22468 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		AFCE792E14186C5C00E22468 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		AFCE793214186EBF00E22468 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		AFCE79F81421A9BD00E22468 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		AFCE79F91421A9BD00E22468 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		AFCE79FA1421A9BD00E22468 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		AFCE79FB1421A9BD00E22468 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		AFCE79FC1421A9BD00E22468 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		AFCE79FD1421A9BD00E22468 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		AFCE79FF1421A9BD00E22468 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		AFCE7A001421A9BD00E22468 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		AFD1E28C13C5598D000AFFFF /* HttpAudioScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpAudioScanner.h; sourceTree = "<group>"; };
 		AFD1E28D13C5598D000AFFFF /* HttpAudioScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpAudioScanner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,10 +228,10 @@
 		AF3BA2A413A6F64500D32708 = {
 			isa = PBXGroup;
 			children = (
+				AFCE79F71421A9BC00E22468 /* Fmdb */,
 				AFCE790C14170F1700E22468 /* jukebox.icns */,
 				AF3BA41B13B7DB8800D32708 /* DBPrefsWindowController */,
 				AF3BA41713B7DB7E00D32708 /* URLParser */,
-				AF3BA3BA13B2D5F900D32708 /* Fmdb */,
 				AF3BA3B613A868DC00D32708 /* THIRDPARTY-LICENSES.txt */,
 				AF3BA3B313A8667B00D32708 /* LICENSE.txt */,
 				AF3BA3AE13A865F000D32708 /* AudioStreamer */,
@@ -411,19 +414,6 @@
 			path = AudioStreamer;
 			sourceTree = "<group>";
 		};
-		AF3BA3BA13B2D5F900D32708 /* Fmdb */ = {
-			isa = PBXGroup;
-			children = (
-				AF3BA3BB13B2D5F900D32708 /* FMDatabase.h */,
-				AF3BA3BC13B2D5F900D32708 /* FMDatabase.m */,
-				AF3BA3BD13B2D5F900D32708 /* FMDatabaseAdditions.h */,
-				AF3BA3BE13B2D5F900D32708 /* FMDatabaseAdditions.m */,
-				AF3BA3C013B2D5F900D32708 /* FMResultSet.h */,
-				AF3BA3C113B2D5F900D32708 /* FMResultSet.m */,
-			);
-			path = Fmdb;
-			sourceTree = "<group>";
-		};
 		AF3BA41713B7DB7E00D32708 /* URLParser */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +430,21 @@
 				AF3BA41D13B7DB8800D32708 /* DBPrefsWindowController.m */,
 			);
 			path = DBPrefsWindowController;
+			sourceTree = "<group>";
+		};
+		AFCE79F71421A9BC00E22468 /* Fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				AFCE79F81421A9BD00E22468 /* FMDatabase.h */,
+				AFCE79F91421A9BD00E22468 /* FMDatabase.m */,
+				AFCE79FA1421A9BD00E22468 /* FMDatabaseAdditions.h */,
+				AFCE79FB1421A9BD00E22468 /* FMDatabaseAdditions.m */,
+				AFCE79FC1421A9BD00E22468 /* FMDatabasePool.h */,
+				AFCE79FD1421A9BD00E22468 /* FMDatabasePool.m */,
+				AFCE79FF1421A9BD00E22468 /* FMResultSet.h */,
+				AFCE7A001421A9BD00E22468 /* FMResultSet.m */,
+			);
+			path = Fmdb;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,9 +554,6 @@
 				AF3BA3AC13A860A200D32708 /* HTTPServer.m in Sources */,
 				AF3BA3AD13A860A200D32708 /* WebSocket.m in Sources */,
 				AF3BA3B113A865F000D32708 /* AudioStreamer.m in Sources */,
-				AF3BA3C213B2D5F900D32708 /* FMDatabase.m in Sources */,
-				AF3BA3C313B2D5F900D32708 /* FMDatabaseAdditions.m in Sources */,
-				AF3BA3C513B2D5F900D32708 /* FMResultSet.m in Sources */,
 				AF3BA3C813B2D90A00D32708 /* JukeboxData.m in Sources */,
 				AF3BA3D513B4306800D32708 /* FSAudioScanner.m in Sources */,
 				AF3BA3DC13B68A3A00D32708 /* Util.m in Sources */,
@@ -560,6 +562,10 @@
 				AF3BA41E13B7DB8800D32708 /* DBPrefsWindowController.m in Sources */,
 				AF3BA42313B7DC2B00D32708 /* JukeboxPrefWindow.m in Sources */,
 				AFD1E28E13C5598D000AFFFF /* HttpAudioScanner.m in Sources */,
+				AFCE7A011421A9BD00E22468 /* FMDatabase.m in Sources */,
+				AFCE7A021421A9BD00E22468 /* FMDatabaseAdditions.m in Sources */,
+				AFCE7A031421A9BD00E22468 /* FMDatabasePool.m in Sources */,
+				AFCE7A051421A9BD00E22468 /* FMResultSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

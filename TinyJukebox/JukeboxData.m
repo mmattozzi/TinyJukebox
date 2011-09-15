@@ -70,11 +70,9 @@ static JukeboxData *singleton = nil;
         remoteIndexGeneration = localIndexGeneration;
         NSLog(@"Local index generation = %ld", localIndexGeneration);
         remoteClients = [[NSMutableSet alloc] init];
-        db = [FMDatabase databaseWithPath:[self pathForDataFile]];
-        if (![db open]) {
-            [db release];
-            return nil;
-        }
+        dbPool = [FMDatabasePool databasePoolWithPath:[self pathForDataFile]];
+        
+        FMDatabase *db = [[dbPool db] popFromPool];
         if (! [db executeUpdate:@"CREATE TABLE IF NOT EXISTS tracks ( id text primary key, title text, album text, server text, artist text, trackNumber integer, path text, isLocal int, generation int )"]) {
             NSLog(@"%@", [db lastErrorMessage]);
         }
@@ -99,6 +97,8 @@ static JukeboxData *singleton = nil;
              [NSNumber numberWithInt:1],
              [NSString stringWithFormat:@"%@.local", [[NSHost currentHost] localizedName]]];
         }
+        
+        [db pushToPool];
     }
     
     return self;
@@ -132,7 +132,7 @@ static JukeboxData *singleton = nil;
 
 - (void) saveSong:(AudioTag *)audioTag isLocal:(BOOL)local {
     @synchronized(singleton) {
-        [db executeUpdate:@"INSERT OR REPLACE INTO tracks (id, title, album, server, artist, trackNumber, path, isLocal, generation) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", 
+        [[dbPool db] executeUpdate:@"INSERT OR REPLACE INTO tracks (id, title, album, server, artist, trackNumber, path, isLocal, generation) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", 
          [audioTag hashString], audioTag.title, audioTag.album, audioTag.server, audioTag.artist, audioTag.trackNumber, audioTag.path, 
          [NSNumber numberWithBool:local], (local ? [NSNumber numberWithLong:localIndexGeneration] : [NSNumber numberWithLong:remoteIndexGeneration])];
     }
@@ -143,7 +143,7 @@ static JukeboxData *singleton = nil;
  */
 - (void) cleanupLocalTracks {
     @synchronized(singleton) {
-        [db executeUpdate:@"DELETE FROM tracks WHERE generation != ? AND isLocal = 1", [NSNumber numberWithLong:localIndexGeneration]];
+        [[dbPool db] executeUpdate:@"DELETE FROM tracks WHERE generation != ? AND isLocal = 1", [NSNumber numberWithLong:localIndexGeneration]];
         localIndexGeneration = (long)[[NSDate date] timeIntervalSince1970];
     }
 }
@@ -153,7 +153,7 @@ static JukeboxData *singleton = nil;
  */
 - (void) cleanupRemoteTracks {
     @synchronized(singleton) {
-        [db executeUpdate:@"DELETE FROM tracks WHERE generation != ? AND isLocal = 0", [NSNumber numberWithLong:remoteIndexGeneration]];
+        [[dbPool db] executeUpdate:@"DELETE FROM tracks WHERE generation != ? AND isLocal = 0", [NSNumber numberWithLong:remoteIndexGeneration]];
         remoteIndexGeneration = (long)[[NSDate date] timeIntervalSince1970];
     }
 }
@@ -182,7 +182,7 @@ static JukeboxData *singleton = nil;
 
 - (NSArray *) getLocalSongs {
     @synchronized(singleton) {
-        FMResultSet *rs = [db executeQuery:@"SELECT title, album, server, artist, trackNumber, path FROM tracks WHERE isLocal = 1 ORDER BY artist, album, trackNumber"];
+        FMResultSet *rs = [[dbPool db] executeQuery:@"SELECT title, album, server, artist, trackNumber, path FROM tracks WHERE isLocal = 1 ORDER BY artist, album, trackNumber"];
         NSArray *songs = [JukeboxData audioTagArrayFromResultSet:rs];
         [rs close];
         return songs;
@@ -192,7 +192,7 @@ static JukeboxData *singleton = nil;
 - (NSArray *) getAllSongs {
     @synchronized(singleton) {
         NSLog(@"Opening sqlite query");
-        FMResultSet *rs = [db executeQuery:@"SELECT title, album, server, artist, trackNumber, path FROM tracks ORDER BY artist, album, trackNumber"];
+        FMResultSet *rs = [[dbPool db] executeQuery:@"SELECT title, album, server, artist, trackNumber, path FROM tracks ORDER BY artist, album, trackNumber"];
         NSArray *songs = [JukeboxData audioTagArrayFromResultSet:rs];
         [rs close];
         NSLog(@"Finished sqlite query");
@@ -203,7 +203,7 @@ static JukeboxData *singleton = nil;
 - (AudioTag *) getSongForKey:(NSString *)key {
     @synchronized(singleton) {
         NSString *keyCopy = [NSString stringWithString:key];
-        FMResultSet *rs = [db executeQuery:@"SELECT title, album, server, artist, trackNumber, path FROM tracks WHERE id = ?", keyCopy];
+        FMResultSet *rs = [[dbPool db] executeQuery:@"SELECT title, album, server, artist, trackNumber, path FROM tracks WHERE id = ?", keyCopy];
         if ([rs next]) {
             AudioTag *audioTag = [JukeboxData audioTagFromResultSet:rs];
             [rs close];
@@ -247,7 +247,7 @@ static JukeboxData *singleton = nil;
     NSLog(@"Args = %@", args);
     NSString *qry = [NSString stringWithFormat:query, queryPredicate];
     NSLog(@"Query = %@", qry);
-    FMResultSet *rs = [db executeQuery:qry withArgumentsInArray:args];
+    FMResultSet *rs = [[dbPool db] executeQuery:qry withArgumentsInArray:args];
     return rs;
 }
 
@@ -263,7 +263,7 @@ static JukeboxData *singleton = nil;
 - (NSArray *) getServers {
     @synchronized(singleton) {
         NSMutableArray *servers = [[[NSMutableArray alloc] init] autorelease];
-        FMResultSet *rs = [db executeQuery:@"SELECT distinct(server) AS s FROM tracks"];
+        FMResultSet *rs = [[dbPool db] executeQuery:@"SELECT distinct(server) AS s FROM tracks"];
         while ([rs next]) {
             NSString *o = [rs stringForColumn:@"s"];
             if (o) {
@@ -307,7 +307,7 @@ static JukeboxData *singleton = nil;
 
 - (int) getLocalTrackCount {
     @synchronized(singleton) {
-        FMResultSet *rs = [db executeQuery:@"SELECT count(*) AS c FROM tracks WHERE isLocal = 1"];
+        FMResultSet *rs = [[dbPool db] executeQuery:@"SELECT count(*) AS c FROM tracks WHERE isLocal = 1"];
         int count = 0;
         if ([rs next]) {
             count = [rs intForColumn:@"c"];
@@ -321,7 +321,7 @@ static JukeboxData *singleton = nil;
 
 - (int) getServerCount {
     @synchronized(singleton) {
-        FMResultSet *rs = [db executeQuery:@"SELECT count(*) AS c FROM servers"];
+        FMResultSet *rs = [[dbPool db] executeQuery:@"SELECT count(*) AS c FROM servers"];
         int count = 0;
         if ([rs next]) {
             count = [rs intForColumn:@"c"];
@@ -333,7 +333,7 @@ static JukeboxData *singleton = nil;
 
 - (NSString *) getServerValueForColumn:(NSString *) column row:(NSInteger)row {
     @synchronized(singleton) {
-        FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"SELECT * FROM servers LIMIT 1 OFFSET %ld", row]];
+        FMResultSet *rs = [[dbPool db] executeQuery:[NSString stringWithFormat:@"SELECT * FROM servers LIMIT 1 OFFSET %ld", row]];
         NSString *value = nil;
         if ([rs next]) {
             value = [rs stringForColumn:column];
@@ -345,14 +345,14 @@ static JukeboxData *singleton = nil;
 
 - (void) addServerUrl:(NSString *)url withType:(NSString *)type {
     @synchronized(singleton) {
-        [db executeUpdate:@"INSERT INTO servers (url, type) VALUES (?, ?)", url, type];
+        [[dbPool db] executeUpdate:@"INSERT INTO servers (url, type) VALUES (?, ?)", url, type];
     }
 }
 
 - (NSArray *) getRemoteServerUrls {
     NSMutableArray *serverUrls = [[[NSMutableArray alloc] init] autorelease];
     @synchronized(singleton) {
-        FMResultSet *rs = [db executeQuery:@"SELECT url FROM servers WHERE type = 'Manual'"];
+        FMResultSet *rs = [[dbPool db] executeQuery:@"SELECT url FROM servers WHERE type = 'Manual'"];
         while ([rs next]) {
             [serverUrls addObject:[rs stringForColumn:@"url"]];
         }
@@ -363,6 +363,7 @@ static JukeboxData *singleton = nil;
 
 - (void) deleteServerForRow:(NSInteger)row {
     @synchronized(singleton) {
+        FMDatabase *db = [[dbPool db] popFromPool];
         FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"SELECT * FROM servers LIMIT 1 OFFSET %ld", row]];
         NSNumber *serverId = nil;
         if ([rs next]) {
@@ -375,12 +376,13 @@ static JukeboxData *singleton = nil;
                 NSLog(@"Error: %@", [db lastErrorMessage]);
             }
         }
+        [db pushToPool];
     }
 }
 
 - (JukeboxConfig *)getConfig {
     @synchronized(singleton) {
-        FMResultSet *rs = [db executeQuery:@"SELECT * FROM config LIMIT 1"];
+        FMResultSet *rs = [[dbPool db] executeQuery:@"SELECT * FROM config LIMIT 1"];
         JukeboxConfig *config = nil;
         if ([rs next]) {
             config = [[[JukeboxConfig alloc] initWithDirectory:[rs stringForColumn:@"directory"] 
@@ -399,16 +401,19 @@ static JukeboxData *singleton = nil;
         NSNumber *portNumber = [NSNumber numberWithInt:config.port];
         NSNumber *allowRemoteNumber = [NSNumber numberWithBool:config.allowRemoteControl];
         NSNumber *shareFilesNumber = [NSNumber numberWithBool:config.shareFiles];
+        FMDatabase *db = [[dbPool db] popFromPool];
         if (! [db executeUpdate:@"UPDATE config SET directory = ?, port = ?, allowRemoteControl = ?, shareFiles = ?, hostname = ?", 
                config.localLibraryDirectory, portNumber, allowRemoteNumber, shareFilesNumber, config.hostname]) {
             NSLog(@"%@", [db lastErrorMessage]);
         }
+        
+        [db pushToPool];
     }
 }
 
 - (void)dealloc
 {
-    [db close];
+    [dbPool releaseAllDatabases];
     [super dealloc];
 }
 

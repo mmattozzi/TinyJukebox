@@ -10,12 +10,12 @@
 
 #define JUKEBOX_DEFAULT_PORT 9033
 
-@class FMDatabase;
+@class FMDatabasePool;
 @class AudioTag;
 @class JukeboxConfig;
 
 @interface JukeboxData : NSObject {
-    FMDatabase *db;
+    FMDatabasePool *dbPool;
     long localIndexGeneration;
     long remoteIndexGeneration;
     NSMutableSet *remoteClients;
